@@ -1,0 +1,9 @@
+Welcome to the epic project.
+
+This is a hobby project aimed at solving reservation constraints with epic pass. During busy weekends, ski mountains are booked up days or sometimes weeks in advance. In order to reserve your trip, you would have to wait for someone to cancel their reservations and then go through a sequence of clicking in the browser in order to secure that spot. Often times, you are beat out by many others who are also trying to reserve that same spot.
+
+This project is a chrome extension that will automate that process and secure your spot for you without breaking a sweat
+
+Progress:
+1) There are options to doing this, either create a chrome extension that will operate on the target webpage OR a python script that makes https calls and parses the page.
+2) Go through tutorial for a chrome extension
