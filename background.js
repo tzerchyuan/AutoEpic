@@ -4,9 +4,12 @@ chrome.runtime.onInstalled.addListener(function() {
 	});
 	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
 		chrome.declarativeContent.onPageChanged.addRules([{
-			// match from within reserve page
+			// only show on the reservation page (this guarantees user logged in)
 			conditions:[new chrome.declarativeContent.PageStateMatcher({
-				pageUrl: {hostEquals: 'www.epicpass.com'},
+				pageUrl: {
+					hostEquals: 'www.epicpass.com',
+					pathContains: 'plan-your-trip/lift-access/reservations.aspx'
+				},
 			})
 			],
 			actions: [new chrome.declarativeContent.ShowPageAction()]
