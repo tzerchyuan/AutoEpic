@@ -48,7 +48,7 @@ confirmButton.onclick = function() {
 			alert('Name is undefined');
 		}
 	});
-	reserve();
+	chrome.storage.sync.set({reserve: true});
 }
 
 var clearButton = document.getElementById("clear");
