@@ -21,6 +21,7 @@ async function loop() {
 
         // Proceeding with reserving
         chrome.storage.sync.get('reserve', function(data) {
+            console.log('in reserve callback');
             if (data.reserve) {
                 let resortPicker = document.querySelector("#PassHolderReservationComponent_Resort_Selection");
                 let datePicker = document.getElementsByClassName("passholder_reservations__booking__day_selector")[0];
@@ -79,7 +80,7 @@ async function loop() {
                             element => element.textContent.toUpperCase().includes('ASSIGN PASS HOLDERS')).click();
                     })
                 }
-                else if (termsChecke != null && confirmClicker != null) {
+                else if (termsChecker != null && confirmClicker != null) {
                     console.log(`Signing terms and conditions and reserving...`);
                     termsChecker.click();
                     confirmClicker.click();
@@ -99,8 +100,9 @@ async function loop() {
             }
         })
 
+        console.log('watiting 3secs...')
         await timer(3000);
     }
 };
 
-loop();
+window.addEventListener('load', loop, false);

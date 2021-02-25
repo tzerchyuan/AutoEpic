@@ -15,7 +15,12 @@
 	"content_scripts": [
 		{
 			"matches": ["https://www.epicpass.com/plan-your-trip/lift-access/*"],
-			"js": ["jquery-3.5.1.min.js", "content.js"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		},
+		{
+			"matches": ["https://www.epicpass.com/account/login.aspx*"],
+			"js": ["login.js"],
 			"run_at": "document_end"
 		}
 	],
