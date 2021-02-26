@@ -19,6 +19,10 @@ async function loop() {
             break; 
         }
 
+        var timeout = 3000;
+        console.log('waiting for ' + timeout + "ms");
+        await timer(timeout);
+
         // Proceeding with reserving
         chrome.storage.sync.get('reserve', function(data) {
             console.log('in reserve callback');
@@ -92,7 +96,7 @@ async function loop() {
                 }
                 else {
                     // we need to reload since reservation is not successful.
-                    location.reload();
+                    location.reload(false);
                 }
             }
             else {
@@ -100,8 +104,8 @@ async function loop() {
             }
         })
 
-        console.log('watiting 3secs...')
-        await timer(3000);
+        // console.log('watiting for ' + timeout + "ms");
+        // await timer(timeout);
     }
 };
 
