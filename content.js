@@ -19,7 +19,7 @@ async function loop() {
             break; 
         }
 
-        var timeout = 3000;
+        var timeout = 2800;
         console.log('waiting for ' + timeout + "ms");
         await timer(timeout);
 
@@ -63,7 +63,9 @@ async function loop() {
                         console.log(button);
                         if (Array.from(button.classList).filter(x => x.includes('disabled')).length > 0) {
                             // refresh the page to start again
+                            console.log('refreshing....');
                             location.reload();
+                            return;
                         }
                         else {
                             // select that date
